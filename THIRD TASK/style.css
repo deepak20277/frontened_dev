@@ -1,0 +1,108 @@
+
+body{
+    background-image: linear-gradient(blue,green,purple);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top left;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    height: 10vh;
+    width: 100%;
+}
+*{
+    margin: 0;
+    padding: a0;
+    box-sizing: border-box;
+
+}
+h1{
+    align-items: center;
+    align-content: center;
+    margin-left: 500px;
+    margin-top: 20px;
+    font-size: 60px;
+
+    
+}
+h2{
+    color: rgb(212,86,2);
+    font-size: 60px;
+    margin-left: 200px;
+    margin-top: 20px;
+    text-decoration: underline;
+    text-shadow: -5px -5px 4px greenyellow;
+
+}
+h4{
+    color: rgb(200,123,25);
+    font-size: 60px;
+    margin-left: 200px;
+    margin-top: 20px;
+    text-decoration: line-through;
+        text-shadow: -5px -5px 4px greenyellow;
+
+
+}
+h2:hover{
+    color: cadetblue;
+    font-size: 80px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: -5px -5px 4px darkturquoise;
+
+}
+.com{
+    display: flex;
+    place-items: left;
+    gap:5px;
+    
+}
+.c1{
+    width:50%;
+    border: 2px solid red;
+    border-radius: 2px;
+    background-color: azure;
+    background-image: url('./images/20250131.jpg');
+    margin-bottom: 30px;
+
+}
+.c2{
+    border: 5px solid sandybrown;
+    margin-left: 300px;
+    background-image: url('./images/20250317.jpg');
+    image-resolution:unset;
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.ek{
+    display: flex;
+    align-items: center;
+}
+.c3{
+    border: 3px solid salmon;
+    background-image: url('/images/20250131.jpg');
+    width: 100%;
+}
+h2::first-letter{
+    text-transform: capitalize;
+    text-shadow: -5px -5px 5px greenyellow;
+}
+.content{
+    width: 50%;
+    height: 50vh;
+    align-items: center;
+    place-content: center;
+    place-items: center;
+    border: 39px solid greenyellow;
+    margin-top: 30px;
+    margin-left: 400px;
+    font-size: 100px;
+    background-image: url('./images/20250317.jpg');
+    color: aqua;
+    border-radius: 50%;
+    padding: 20px;
+    text-decoration: underline;
+    box-shadow: -5px -4px 5px red;
+
+}
+
+

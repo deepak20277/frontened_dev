@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing Section using Flexbox</title>
+<style>
+  /* Basic Reset */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f6fa;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  /* Container */
+  .pricing-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    flex-wrap: wrap;
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  /* Pricing Card */
+  .pricing-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 30px 20px;
+    width: 280px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeInCards 1s forwards;
+  }
+
+  /* Middle (highlighted) card */
+  .pricing-card.highlight {
+    background: #4a90e2;
+    color: white;
+    transform: scale(1.05);
+  }
+
+  /* Hover effect */
+  .pricing-card:hover {
+    transform: translateY(-10px);
+  }
+
+  /* Card content */
+  .pricing-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .price {
+    font-size: 36px;
+    margin: 10px 0;
+    font-weight: bold;
+  }
+
+  .features {
+    list-style: none;
+    margin: 20px 0;
+  }
+
+  .features li {
+    margin: 8px 0;
+  }
+
+  .btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 25px;
+    background: #4a90e2;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+
+  .highlight .btn {
+    background: white;
+    color: #4a90e2;
+  }
+
+  .btn:hover {
+    background: #333;
+    color: white;
+  }
+
+  /* Fade-in animation */
+  @keyframes fadeInCards {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Delay for each card for staggered fade-in */
+  .pricing-card:nth-child(1) { animation-delay: 0.2s; }
+  .pricing-card:nth-child(2) { animation-delay: 0.4s; }
+  .pricing-card:nth-child(3) { animation-delay: 0.6s; }
+
+  /* Responsive Design */
+  @media (max-width: 750px) {
+    .pricing-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .pricing-card {
+      width: 90%;
+      max-width: 350px;
+    }
+
+    .pricing-card.highlight {
+      transform: scale(1);
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="pricing-container">
+    <div class="pricing-card">
+      <h3>Basic</h3>
+      <p class="price">$9/month</p>
+      <ul class="features">
+        <li>✔ 10 Projects</li>
+        <li>✔ 5 GB Storage</li>
+        <li>✖ No Support</li>
+      </ul>
+      <a href="#" class="btn">Choose Plan</a>
+    </div>
+
+    <div class="pricing-card highlight">
+      <h3>Pro</h3>
+      <p class="price">$29/month</p>
+      <ul class="features">
+        <li>✔ 50 Projects</li>
+        <li>✔ 50 GB Storage</li>
+        <li>✔ Priority Support</li>
+      </ul>
+      <a href="#" class="btn">Choose Plan</a>
+    </div>
+
+    <div class="pricing-card">
+      <h3>Premium</h3>
+      <p class="price">$49/month</p>
+      <ul class="features">
+        <li>✔ Unlimited Projects</li>
+        <li>✔ 200 GB Storage</li>
+        <li>✔ 24/7 Support</li>
+      </ul>
+      <a href="#" class="btn">Choose Plan</a>
+    </div>
+  </div>
+
+</body>
+</html>

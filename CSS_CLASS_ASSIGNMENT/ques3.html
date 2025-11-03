@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3-Section Homepage | Flexbox Layout</title>
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: #f7f9fc;
+      color: #222;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-around; 
+      align-items: center;
+      background-color: #1e293b;
+      color: white;
+      padding: 15px 0;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    header a:hover {
+      color: #38bdf8;
+    }
+
+    /* MAIN SECTION */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      padding: 50px 20px;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      background-color: white;
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      width: 260px;
+      height: 180px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .box:hover {
+      transform: rotate(2deg);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    .box h2 {
+      margin-bottom: 10px;
+      color: #1e293b;
+    }
+
+    .box p {
+      font-size: 0.95rem;
+      color: #475569;
+      text-align: center;
+      width: 80%;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #1e293b;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 0.9rem;
+      margin-top: auto; /* keeps footer at bottom */
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 700px) {
+      main {
+        flex-direction: column;
+      }
+      .box {
+        width: 90%;
+        max-width: 350px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">Projects</a>
+    <a href="#">Contact</a>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="box">
+      <h2>Services</h2>
+      <p>Explore the professional web and app development services I offer.</p>
+    </div>
+    <div class="box">
+      <h2>Projects</h2>
+      <p>Check out my latest projects showcasing creativity and logic.</p>
+    </div>
+    <div class="box">
+      <h2>Contact</h2>
+      <p>Let’s collaborate! Reach out to discuss your next big idea.</p>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Deepak Rawat. All rights reserved.
+  </footer>
+</body>
+</html>

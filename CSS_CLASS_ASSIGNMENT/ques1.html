@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Deepak Rawat | Portfolio</title>
+
+  <!-- Single-file CSS (internal stylesheet) -->
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* Body layout */
+    body {
+      font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: #f5f7fb;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+    .header {
+      display: flex;               /* use flexbox horizontally */
+      justify-content: space-between;
+      align-items: center;         /* vertical centering */
+      padding: 18px 28px;
+      background: #111827;
+      color: #fff;
+      gap: 12px;
+    }
+    .brand {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+    nav.nav {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+    nav.nav a {
+      color: #e6eef6;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 10px;
+      border-radius: 6px;
+    }
+    nav.nav a:hover {
+      background: rgba(255,255,255,0.05);
+      color: #9fe7ff;
+    }
+
+    /* MAIN area: two side-by-side sections */
+    main.main {
+      display: flex;              /* side-by-side on wide screens */
+      gap: 36px;
+      align-items: center;        /* vertical center */
+      justify-content: center;    /* horizontal center */
+      flex: 1;
+      padding: 48px;
+    }
+
+    .about {
+      flex: 1 1 420px;
+      max-width: 700px;
+    }
+    .about h2 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+    .about p {
+      line-height: 1.7;
+      font-size: 1.05rem;
+      color: #333;
+    }
+
+    .profile {
+      flex: 0 0 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .profile img {
+      width: 320px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(16,24,40,0.12);
+    }
+
+    /* FOOTER */
+    footer.footer {
+      background: #111827;
+      color: #e6eef6;
+      text-align: center;
+      padding: 14px 10px;
+      font-size: 0.95rem;
+    }
+
+    /* Responsive: below 700px stack vertically */
+    @media (max-width: 700px) {
+      .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      nav.nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      main.main {
+        flex-direction: column;   /* stack sections vertically */
+        padding: 28px 18px;
+      }
+      .about {
+        max-width: 100%;
+      }
+      .profile {
+        margin-top: 18px;
+      }
+      .profile img {
+        width: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="brand">Deepak Rawat</div>
+    <nav class="nav" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="main">
+    <section class="about" id="about">
+      <h2>About Me</h2>
+      <p>
+        Hello! I'm Deepak Rawat — a passionate developer who enjoys building responsive
+        and user-friendly applications. I work with Java, Flutter, Python and web technologies.
+        I love solving problems, learning new tools and shipping clean, maintainable code.
+      </p>
+    </section>
+
+    <section class="profile" aria-label="Profile image">
+      <!-- replace with your real photo or local path -->
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    &copy; <span id="year"></span> Deepak Rawat. All rights reserved.
+  </footer>
+
+
+</body>
+</html>

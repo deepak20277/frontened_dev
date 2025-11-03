@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>assignment 6</title>
+  <style>
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2em;
+  color: #333;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+} 
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 30px 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; 
+  height: 200px;
+  color: white;
+  font-size: 40px;
+              
+}
+
+
+
+
+
+@media (max-width: 992px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <h1 class="heading">assignment 6</h1>
+
+  <div class="gallery">
+  <div class="card" style="background-image: url('./images/20250317.jpg'); background-size: cover;">
+      <h2>Product 1</h2>
+      <p>₹999</p>
+    </div>
+    <div class="card" style="background-image: url('./images/20250131.jpg'); background-size: cover;">
+      <h2>Product 2</h2>
+      <p>₹799</p>
+    </div>
+    <div class="card" style="background-image: url('./images/20250317.jpg'); background-size: cover;">
+      <h2>Product 3</h2>
+      <p>₹1,499</p>
+    </div>
+    <div class="card" style="background-image: url('./images/20250317.jpg'); background-size: cover;">
+      <h2>Product 4</h2>
+      <p>₹1,199</p>
+    </div>
+    <div class="card" style="background-image: url('./images/20250131.jpg'); background-size: cover;">
+      <h2>Product 5</h2>
+      <p>₹599</p>
+    </div>
+    <div class="card" style="background-image: url('./images/20250317.jpg'); background-size: cover;">
+      <h2>Product 6</h2>
+      <p>₹899</p>
+    </div>
+    <div class="card" style="background-image: url('./images/20250317.jpg'); background-size: cover;">
+      <h2>Product 7</h2>
+      <p>₹1,999</p>
+    </div>
+    <div class="card" style="background-image: url('./images/20250131.jpg'); background-size: cover;">
+      <h2>Product 8</h2>
+      <p>₹1,299</p>
+    </div>
+  </div>
+
+</body>
+</html>

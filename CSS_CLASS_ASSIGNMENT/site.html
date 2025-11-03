@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MySite Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    /* 🔹 Color Variables */
+    :root {
+      --dark-navy: #2c3e50;
+      --medium-blue: #34495e;
+      --primary-blue: #3498db;
+      --light-blue-gradient-start: #3498db;
+      --light-blue-gradient-end: #2980b9;
+      --secondary-blue-gradient-start: #1abc9c;
+      --secondary-blue-gradient-end: #16a085;
+      --text-color-dark: #333;
+      --text-color-light: #f5f5f5;
+      --text-color-gray: #7f8c8d;
+      --background-light-gray: #ecf0f1;
+      --border-light-gray: #f0f0f0;
+      --white: #ffffff;
+      --sidebar-width: 200px;
+    }
+
+    /* 🔹 Global Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      /* background-image: url('/images/Screenshot\ \(43\).png'); */
+      background-color: var(--background-light-gray);
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .dashboard-wrapper {
+      width: 90%;
+      max-width: 1200px;
+      background-color: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    /* 🔹 Navbar */
+    .navbar-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--dark-navy);
+      padding: 15px 30px;
+      color: var(--text-color-light);
+    }
+
+    .navbar-brand {
+      font-size: 1.6em;
+      font-weight: 700;
+    }
+
+    .navbar-menu .nav-item {
+      color: var(--text-color-light);
+      text-decoration: none;
+      padding: 0 15px;
+      font-size: 0.95em;
+      transition: color 0.3s, border-bottom 0.3s;
+    }
+
+    .navbar-menu .nav-item.active {
+      color: var(--primary-blue);
+      border-bottom: 3px solid var(--primary-blue);
+      padding-bottom: 5px;
+    }
+
+    .navbar-menu .nav-item:not(.active):hover {
+      color: var(--primary-blue);
+    }
+
+    /* 🔹 Layout */
+    .main-container {
+      display: flex;
+      min-height: 600px;
+    }
+
+    /* 🔹 Sidebar */
+    .sidebar {
+      width: var(--sidebar-width);
+      background-color: var(--medium-blue);
+      color: var(--text-color-light);
+      flex-shrink: 0;
+      padding-top: 20px;
+    }
+
+    .sidebar-category-header {
+      padding: 10px 20px;
+      font-size: 1.1em;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 10px;
+    }
+
+    .sidebar-nav-list {
+      list-style: none;
+    }
+
+    .sidebar-nav-link {
+      display: flex;
+      align-items: center;
+      color: var(--text-color-light);
+      text-decoration: none;
+      padding: 12px 20px;
+      transition: background-color 0.3s, color 0.3s;
+      font-size: 0.9em;
+    }
+
+    .sidebar-nav-link i {
+      margin-right: 10px;
+      width: 20px;
+      text-align: center;
+    }
+
+    .sidebar-nav-link:hover:not(.active) {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .sidebar-nav-link.active {
+      background-color: var(--white);
+      color: var(--dark-navy);
+      position: relative;
+    }
+
+    .sidebar-nav-link.active::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 5px;
+      background-color: var(--primary-blue);
+      border-radius: 0 3px 3px 0;
+    }
+
+    /* 🔹 Content Area */
+    .content-area {
+      flex-grow: 1;
+      padding: 30px;
+    }
+
+    .welcome-title {
+      font-size: 2em;
+      color: var(--text-color-dark);
+      margin-bottom: 10px;
+    }
+
+    .welcome-message {
+      color: var(--text-color-gray);
+      line-height: 1.6;
+      margin-bottom: 30px;
+      max-width: 800px;
+    }
+
+    .card-section-label {
+      font-size: 0.8em;
+      color: #bdc3c7;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    /* 🔹 Cards */
+    .card-grid {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--border-light-gray);
+      width: 280px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .card-header {
+      height: 120px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--white);
+      font-size: 1.6em;
+      font-weight: 700;
+    }
+
+    .card-header-blue {
+      background: linear-gradient(135deg, var(--light-blue-gradient-start), var(--light-blue-gradient-end));
+    }
+
+    .card-title {
+      font-size: 1.3em;
+      color: var(--text-color-dark);
+      margin-bottom: 8px;
+      padding: 0 20px;
+    }
+
+    .card-description {
+      font-size: 0.9em;
+      color: var(--text-color-gray);
+      margin-bottom: 25px;
+      flex-grow: 1;
+      padding: 0 20px;
+    }
+
+    .card-button {
+      padding: 10px 25px;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+      font-size: 0.9em;
+      cursor: pointer;
+      border: none;
+      margin-bottom: 20px;
+    }
+
+    .button-blue {
+      background-color: var(--primary-blue);
+      color: var(--white);
+      border: 1px solid var(--primary-blue);
+    }
+
+    .button-blue:hover {
+      background-color: var(--light-blue-gradient-end);
+    }
+
+    /* 🔹 Footer */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--dark-navy);
+      color: var(--text-color-light);
+      padding: 12px 30px;
+      font-size: 0.75em;
+    }
+
+    .footer-links a {
+      color: var(--text-color-light);
+      text-decoration: none;
+      margin-right: 10px;
+    }
+
+    .footer-links .separator {
+      margin-right: 10px;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .footer-center {
+      display: flex;
+      align-items: center;
+    }
+
+    .login-tag {
+      background-color: var(--primary-blue);
+      padding: 5px 10px;
+      border-radius: 4px;
+      margin-right: 15px;
+      font-size: 0.85em;
+      font-weight: 600;
+    }
+
+    .footer-social a {
+      color: var(--text-color-light);
+      margin-left: 15px;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+
+    .footer-social a:hover {
+      color: var(--primary-blue);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="dashboard-wrapper">
+
+    <header class="navbar-top">
+      <div class="navbar-brand">MySite</div>
+      <nav class="navbar-menu">
+        <a href="#" class="nav-item active">Home</a>
+        <a href="#" class="nav-item">About</a>
+        <a href="#" class="nav-item">Services</a>
+        <a href="#" class="nav-item">Contact</a>
+      </nav>
+    </header>
+
+    <div class="main-container">
+      <aside class="sidebar">
+        <div class="sidebar-category-header">Categories</div>
+        <ul class="sidebar-nav-list">
+          <li><a href="#" class="sidebar-nav-link"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="#" class="sidebar-nav-link active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+          <li><a href="#" class="sidebar-nav-link"><i class="fas fa-chart-line"></i> Analytics</a></li>
+          <li><a href="#" class="sidebar-nav-link"><i class="fas fa-box-open"></i> Products</a></li>
+          <li><a href="#" class="sidebar-nav-link"><i class="fas fa-users"></i> Users</a></li>
+          <li><a href="#" class="sidebar-nav-link"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+      </aside>
+
+      <main class="content-area">
+        <h1 class="welcome-title">Welcome to Our Website!</h1>
+        <p class="welcome-message">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+
+        <p class="card-section-label">Card Container</p>
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-header card-header-blue">Card 1</div>
+            <h3 class="card-title">Card Item One</h3>
+            <p class="card-description">Card item short description and context here.</p>
+            <button class="card-button button-blue">Learn More</button>
+          </div>
+
+          <div class="card">
+            <div class="card-header card-header-blue">Card 2</div>
+            <h3 class="card-title">Card Item Two</h3>
+            <p class="card-description">Card item short description and context here.</p>
+            <button class="card-button button-blue">Discover</button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <span class="separator">|</span>
+        <a href="#">Terms of Service</a>
+      </div>
+      <div class="footer-center">
+        <span class="login-tag"><i class="fas fa-sign-in-alt"></i> Login</span>
+        <span>&copy; 2025 MyCompany. All rights reserved.</span>
+      </div>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

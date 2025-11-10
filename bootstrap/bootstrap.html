@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- use defer after script if we are attaching js file in head tag -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-light">
+    <div class="container text py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <h3 class="text-center mb-4">Create an Account</h3>
+                        <form action="">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1"
+                                    placeholder="name@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="Phone number" class="form-label">Phone Number</label>
+                                <input type="integer" class="form-control" id="phone number"
+                                    placeholder="Enter your Phone number">
+                            </div>
+                            <div class="mb-3">
+                                <label for="gender" class="form-label">Gender</label>
+
+                                <div class="input-group-text">
+                                    <input class="form-check-input mt-0" type="radio" value="male" name="gender"
+                                        id="male" aria-label="Radio button for following text input">Male
+                                </div>
+                                <div class="input-group-text">
+                                    <input class="form-check-input mt-0" type="radio" value="female" name="gender"
+                                        id="female" aria-label="Radio button for following text input">Female
+                                </div>
+
+                            </div>
+                            <div class="mb-3">
+                                <label for="country" class="form-label">Country</label>
+                                <select class="form-select" id="country" aria-label="Default select example">
+                                    <option selected>Select your country</option>
+                                    <option value="1">United States</option>
+                                    <option value="2">Canada</option>
+                                    <option value="3">United Kingdom</option>
+                                    <option value="4">Australia</option>
+                                    <option value="5">India</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password"
+                                    placeholder="Enter your password">
+                            </div>
+                            <div class="mb-3">
+                                <label for="Confirmpassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="Confirmpassword"
+                                    placeholder="Re-Enter your password">
+                            </div>
+
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="formSwitchCheckChecked" checked="">
+                                <label class="form-check-label" for="formSwitchCheckChecked">Accept terms & conditions
+                                </label>
+                            </div>
+
+                            <button type="button" class="btn btn-primary">submit</button>
+                                <a href="login.html"><button type="button" class="btn btn-link">Login</button></a>                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
